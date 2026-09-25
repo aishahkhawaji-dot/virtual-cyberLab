@@ -691,6 +691,7 @@ elif st.session_state.page == "teacher":
                 st.session_state.teacher_authenticated = password == TEACHER_PASSWORD
                 if not st.session_state.teacher_authenticated:
                     st.error("Incorrect teacher password.")
+                else:
                     st.rerun()
                 st.rerun()
         if st.session_state.get("teacher_authenticated", False):

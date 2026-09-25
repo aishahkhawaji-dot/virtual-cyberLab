@@ -691,8 +691,6 @@ elif st.session_state.page == "teacher":
                 st.session_state.teacher_authenticated = password == TEACHER_PASSWORD
                 if not st.session_state.teacher_authenticated:
                     st.error("Incorrect teacher password.")
-                else:
-                    st.rerun()
                 st.rerun()
         if st.session_state.get("teacher_authenticated", False):
             rows, err = _supabase_request("GET", "vcl_learners", "select=student_id,learner_name,score,completed,attempts,updated_at&order=updated_at.desc")

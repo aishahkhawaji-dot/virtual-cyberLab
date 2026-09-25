@@ -628,7 +628,7 @@ elif st.session_state.page == "student_access":
             st.button("CREATE STUDENT ID", key="create_student_id", use_container_width=True, disabled=not bool(SUPABASE_URL and SUPABASE_KEY), on_click=_create_student_callback)
         with b:
             st.markdown("### 🔄 Continue")
-            st.text_input("Student ID", key="continue_student_id", placeholder="Example: VCL-A1B2C3D4")
+            st.text_input("Student ID (Use your own code)", key="continue_student_id", placeholder="Example: VCL-A1B2C3D4")
             st.button("CONTINUE", key="continue_student", use_container_width=True, disabled=not bool(SUPABASE_URL and SUPABASE_KEY), on_click=_continue_student_callback)
         if st.session_state.get("student_login_error"):
             st.error(st.session_state.student_login_error)
